@@ -22,7 +22,6 @@ class BasicCalculator:
         return a / b
 
     def calculate(self, equation):
-        # find all operations containing * and /
         for i, char in enumerate(equation):
             if char in self.operators:
                 operator = self.operators[char]
@@ -35,3 +34,8 @@ class BasicCalculator:
             equation = equation.replace(to_replace, str(result))
         
         return equation
+
+if __name__ == "__main__":
+    calculator = BasicCalculator()
+    result = calculator.calculate("1+2*3")
+    print(result)
